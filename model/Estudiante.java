@@ -1,5 +1,5 @@
 package model;
-public abstract class Estudiante {
+public class Estudiante {
     protected String cedula;
     protected String nombre;
     protected String apellido;
@@ -7,7 +7,7 @@ public abstract class Estudiante {
     protected int serial;
 
     // Constructor
-    public Estudiante(String cedula, String nombre, String apellido, String telefono) {
+    public Estudiante(String cedula, String nombre, String apellido, String telefono, int serial) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;

@@ -1,7 +1,6 @@
 package controller;
 
-public class ControladorEstudiantes implements Controlador{
-
+public class ControladorEstudiantesDisenio implements Controlador{
     @Override
     public void registrar() {
 
