@@ -4,11 +4,12 @@ public class EstudianteDiseno extends Estudiante {
     private int cantidadAsignaturas;
 
     // Constructor
-    public EstudianteDiseno(String cedula, String nombre, String apellido, String telefono, String modalidadEstudio, int cantidadAsignaturas) {
-        super(cedula, nombre, apellido, telefono);
+    public EstudianteDiseno(String cedula, String nombre, String apellido, String telefono, int serial, String modalidadEstudio, int cantidadAsignaturas) {
+        super(cedula, nombre, apellido, telefono, serial);
         this.modalidadEstudio = modalidadEstudio;
         this.cantidadAsignaturas = cantidadAsignaturas;
     }
+
 
     // Sobrescribir método para mostrar la información
 

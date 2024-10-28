@@ -1,10 +1,18 @@
 package view;
-import controller.Menu;
 import java.util.Scanner;
 
 public abstract class Vista {
 
     static Scanner sc = new Scanner(System.in);
+
+    //Primera vista del programa, el usuario elige entre iniciar sesión o registrarse
+    public static String inicio(){
+        return "Seleccionar una opción:\n"
+                +"1 Registrarse\n" +
+                "2 Iniciar sesión\n" +
+                "3 Salir";
+    }
+
 
     public static void menuPrincipal() {
         while (true) {
