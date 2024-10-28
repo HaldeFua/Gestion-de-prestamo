@@ -14,8 +14,7 @@ public class ControladorPersistencia {
         String fileName = "estudiantes_ingenieria.txt";
 
         // Creación y escritura en el archivo
-        try (FileWriter writer = new FileWriter(fileName, true)) {  // "true" permite agregar datos sin sobrescribir el archivo
-            // Convierte los datos del estudiante en una cadena formateada (ejemplo en formato CSV)
+        try (FileWriter writer = new FileWriter(fileName, true)) {
             String data = estudiante.getCedula() + "," + estudiante.getNombre() + "," +
                     estudiante.getApellido() + "," + estudiante.getTelefono() + "," +
                     estudiante.getSerial() + "," + estudiante.getNumeroSemestre() + "," +
