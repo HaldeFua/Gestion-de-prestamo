@@ -1,11 +1,11 @@
 package model;
 public class EstudianteIngenieria extends Estudiante {
     private int numeroSemestre;
-    private float promedioAcumulado;
+    private double promedioAcumulado;
 
     // Constructor
 
-    public EstudianteIngenieria(String cedula, String nombre, String apellido, String telefono, int serial, int numeroSemestre, float promedioAcumulado) {
+    public EstudianteIngenieria(String cedula, String nombre, String apellido, String telefono, int serial, int numeroSemestre, double promedioAcumulado) {
         super(cedula, nombre, apellido, telefono, serial);
         this.numeroSemestre = numeroSemestre;
         this.promedioAcumulado = promedioAcumulado;
@@ -20,7 +20,7 @@ public class EstudianteIngenieria extends Estudiante {
         this.numeroSemestre = numeroSemestre;
     }
 
-    public float getPromedioAcumulado() {
+    public double getPromedioAcumulado() {
         return promedioAcumulado;
     }
 

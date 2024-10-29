@@ -1,13 +1,51 @@
 package controller;
 import model.EstudianteIngenieria;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.LinkedList;
 
 public class ControladorPersistencia {
 
-    public void importartxt(){
+    public LinkedList<EstudianteIngenieria> importartxtEstudianteIngenieria(String nombreArchivo) {
 
+        LinkedList<EstudianteIngenieria> listaEstudiantes = new LinkedList<>();
+        String rutaArchivo = nombreArchivo + ".txt";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
+            String line;
+
+            while ((line = br.readLine()) != null) {
+
+                String[] campos = line.split(",");
+
+                if (campos.length == 7) {
+                    String cedula = campos[0].trim();
+                    String nombre = campos[1].trim();
+                    String apellido = campos[2].trim();
+                    String telefono = campos[3].trim();
+                    int serial = Integer.parseInt(campos[4].trim());
+                    int numeroSemestre = Integer.parseInt(campos[5].trim());
+                    double promedioAcumulado = Double.parseDouble(campos[6].trim());
+
+                    EstudianteIngenieria estudiante = new EstudianteIngenieria(cedula, nombre, apellido, telefono, serial, numeroSemestre, promedioAcumulado);
+                    listaEstudiantes.add(estudiante);
+                } else {
+                    System.out.println("Formato de línea incorrecto: " + line);
+                }
+            }
+
+            System.out.println("¡Archivo de estudiantes importado exitosamente!");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (NumberFormatException e) {
+            System.out.println("Error de formato numérico: " + e.getMessage());
+        }
+
+        return listaEstudiantes;
     }
 
     public void exportartxtEstudianteIngenieria(EstudianteIngenieria estudiante){

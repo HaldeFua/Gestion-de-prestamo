@@ -1,36 +1,43 @@
 package controller;
 import view.Vista;
-import java.util.Scanner;
 
 public abstract class ControladorMain {
 
+    static Validaciones val = new Validaciones();
+
     //primer programa de la app
     public static void run(){
-        Scanner sc = new Scanner(System.in);
         //Primera vista del programa, el usuario elige entre iniciar sesión o registrarse
-        int controlador = 0;
-        do
-        {
-            System.out.println(Vista.inicio());
-            controlador = sc.nextInt();
+        int vandera = 0;
+        ControladorEstudiantesIngenieria controladorEstudiantesIngenieria = new ControladorEstudiantesIngenieria();
+        do {
+            vandera = val.capturarInt(Vista.inicio());
 
-            if(controlador ==1){
-                int controlador2 = 0;
+            if (vandera == 1) {
+                int controlador = 0;
                 do {
-                    System.out.println("Seleccionar una opción:\n"
-                            +"1 Estudiante Ingenieria\n" +
+
+                    controlador = val.capturarInt("Seleccionar una opción:\n"
+                            + "1 Estudiante Ingenieria\n" +
                             "2 Estudiante Diseño\n" +
                             "3 Salir");
-                    controlador2 = sc.nextInt();
-                    if(controlador2 == 1){
-                        ControladorEstudiantesIngenieria controladorEstudiantesIngenieria = new ControladorEstudiantesIngenieria();
+
+                    System.out.println(controlador);
+
+                    if (controlador == 1) {
                         controladorEstudiantesIngenieria.registrar();
+                    } else if (controlador == 2) {
+                        System.out.println("Valor de controlador: " + controlador);
+                        /*String cedula = val.capturarString("Ingrese cedula: ");
+                        if (controladorEstudiantesIngenieria.iniciarSesion(cedula)) {
+                            Vista.menuPrincipal();
+                        } else {
+                            System.out.println("Error: No se pudo iniciar sesión.");
+                        }*/
                     }
-                }while(controlador2 != 3);
+                } while (controlador != 3);
             }
-        }while(controlador!=3);
+        } while (vandera != 3);
     }
-
-
 
 }
