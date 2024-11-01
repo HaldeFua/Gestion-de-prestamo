@@ -8,7 +8,6 @@ public class ControladorEstudiantesIngenieria implements Controlador{
     ControladorPersistencia persistencia = new ControladorPersistencia();
     Validaciones val = new Validaciones();
 
-    @Override
     public void registrar() {
         String cedula;
         String nombre;
@@ -30,12 +29,9 @@ public class ControladorEstudiantesIngenieria implements Controlador{
         persistencia.exportartxtEstudianteIngenieria(estudianteIngenieria);
     }
 
-    public boolean iniciarSesion(String cedula){
-        if(buscar(cedula) != null){
-            return true;
-        }else{
-            return false;
-        }
+    @Override
+    public boolean existeEstudiante(String cedula){
+        return buscar(cedula) != null;
     }
 
     @Override

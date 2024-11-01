@@ -10,6 +10,21 @@ public class EstudianteDiseno extends Estudiante {
         this.cantidadAsignaturas = cantidadAsignaturas;
     }
 
+    public String getModalidadEstudio() {
+        return modalidadEstudio;
+    }
+
+    public void setModalidadEstudio(String modalidadEstudio) {
+        this.modalidadEstudio = modalidadEstudio;
+    }
+
+    public int getCantidadAsignaturas() {
+        return cantidadAsignaturas;
+    }
+
+    public void setCantidadAsignaturas(int cantidadAsignaturas) {
+        this.cantidadAsignaturas = cantidadAsignaturas;
+    }
 
     // Sobrescribir método para mostrar la información
 

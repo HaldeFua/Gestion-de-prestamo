@@ -1,4 +1,5 @@
 package controller;
+import model.EstudianteIngenieria;
 import view.Vista;
 
 public abstract class ControladorMain {
@@ -9,6 +10,8 @@ public abstract class ControladorMain {
         public static void run() {
         int bandera = 0;
         ControladorEstudiantesIngenieria controladorEstudiantesIngenieria = new ControladorEstudiantesIngenieria();
+        ControladorEstudiantesDisenio controladorEstudiantesDisenio = new ControladorEstudiantesDisenio();
+
         do {
             bandera = val.capturarInt(Vista.inicio());
 
@@ -21,10 +24,12 @@ public abstract class ControladorMain {
                             "2 Estudiante Diseño\n" +
                             "3 Salir");
 
-                    if (controlador == 1) {
-                        controladorEstudiantesIngenieria.registrar();
-                    }
+                    switch (controlador){
+                        case 1 -> controladorEstudiantesIngenieria.registrar();
+                        case 2 -> controladorEstudiantesDisenio.registrar();
+                        default -> System.out.println("Opción no válida, intente de nuevo.");                    }
                 } while (controlador != 3);
+
             } else if (bandera == 2) {
                 String cedula = val.capturarString("Ingrese cédula: ");
                 if (controladorEstudiantesIngenieria.existeEstudiante(cedula)) {

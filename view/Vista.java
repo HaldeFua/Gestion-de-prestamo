@@ -1,4 +1,6 @@
 package view;
+import model.EstudianteIngenieria;
+
 import java.util.Scanner;
 
 public abstract class Vista {
@@ -14,7 +16,7 @@ public abstract class Vista {
     }
 
 
-    public static void menuPrincipal() {
+    public static void menuIngenieria() {
         while (true) {
             System.out.println("\n---- MENÚ PRINCIPAL ----");
             System.out.println("1. Estudiantes de Ingeniería");
@@ -25,7 +27,7 @@ public abstract class Vista {
             String opcion = sc.nextLine();
 
             switch (opcion) {
-                case "1" -> menuIngenieria();
+                /*case "1" -> menuIngenieria();*/
                 case "2" -> menuDiseno();
                 case "3" -> {
                     System.out.println("Saliendo del sistema...");
@@ -37,10 +39,10 @@ public abstract class Vista {
         }
     }
 
-    public static void menuIngenieria() {
+    public static void menuIngenieria(EstudianteIngenieria usuario) {
         while (true) {
 
-            System.out.println("\n---- ESTUDIANTES DE INGENIERÍA ----");
+            System.out.println("\n---- BIENVENIDO " + usuario.getNombre() + " ----");
             System.out.println("1. Registrar préstamo de equipo");
             System.out.println("2. Modificar préstamo de equipo (por serial o cédula)");
             System.out.println("3. Devolución de equipo (por serial o cédula)");

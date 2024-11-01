@@ -2,10 +2,6 @@ package controller;
 
 public class ControladorEquipos implements Controlador{
 
-    @Override
-    public void registrar() {
-
-    }
 
     @Override
     public void modificar() {
@@ -20,5 +16,10 @@ public class ControladorEquipos implements Controlador{
     @Override
     public void buscar() {
 
+    }
+
+    @Override
+    public boolean existeEstudiante(String cedula) {
+        return false;
     }
 }
