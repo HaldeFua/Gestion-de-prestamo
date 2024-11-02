@@ -9,21 +9,14 @@ public class ControladorEstudiantesIngenieria implements Controlador{
     Validaciones val = new Validaciones();
 
     public void registrar() {
-        String cedula;
-        String nombre;
-        String apellido;
-        String telefono;
-        int serial;
-        int numeroSemestre;
-        double promedioAcumulado;
 
-        cedula = val.capturarString("Registrar una cedula:");
-        nombre = val.capturarString("Registrar un nombre:");
-        apellido = val.capturarString("Registrar un apellido:");
-        telefono = val.capturarString("Registrar un telefono:");
-        serial = val.capturarInt("Registrar un serial:");
-        numeroSemestre = val.capturarInt("Registrar un numero de semestre:");
-        promedioAcumulado = val.capturarDouble("Registrar un promedio acumulado:");
+        String cedula = val.capturarString("Registrar una cedula:");
+        String nombre = val.capturarString("Registrar un nombre:");
+        String apellido = val.capturarString("Registrar un apellido:");
+        String telefono = val.capturarString("Registrar un telefono:");
+        int serial = val.capturarInt("Registrar un serial:");
+        int numeroSemestre = val.capturarInt("Registrar un numero de semestre:");
+        double promedioAcumulado = val.capturarDouble("Registrar un promedio acumulado:");
 
         EstudianteIngenieria estudianteIngenieria = new EstudianteIngenieria(cedula,nombre,apellido,telefono,serial,numeroSemestre,promedioAcumulado);
         persistencia.exportartxtEstudianteIngenieria(estudianteIngenieria);

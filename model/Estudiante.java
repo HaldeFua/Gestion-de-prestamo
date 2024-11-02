@@ -1,5 +1,5 @@
 package model;
-public class Estudiante {
+public abstract class Estudiante {
     protected String cedula;
     protected String nombre;
     protected String apellido;

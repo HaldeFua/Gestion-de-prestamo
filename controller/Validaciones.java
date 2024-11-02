@@ -49,7 +49,7 @@ public class Validaciones {
             if(entrada.length() == tamanio){
                 return entrada;
             }else{
-                System.out.println("Ingrese por favor un valor valido");
+                System.out.println("Ingrese por favor un valor valido, el tamaño del valor a registrar debe ser de " + tamanio + " caracteres" );
             }
         }
 

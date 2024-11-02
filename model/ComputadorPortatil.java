@@ -2,7 +2,7 @@ package model;
 public class ComputadorPortatil extends Equipo{
 
     private String sistemaOperativo;
-    private String procesaro;
+    private String procesador;
 
     //Constructor
 
@@ -10,7 +10,7 @@ public class ComputadorPortatil extends Equipo{
     public ComputadorPortatil(String serial, String marca, String tamanio, int precio, String sistemaOperativo, String procesaro) {
         super(serial, marca, tamanio, precio);
         this.sistemaOperativo = sistemaOperativo;
-        this.procesaro = procesaro;
+        this.procesador = procesaro;
     }
 
     //get and set
@@ -21,17 +21,17 @@ public class ComputadorPortatil extends Equipo{
         this.sistemaOperativo = sistemaOperativo;
     }
     public String getProcesaro() {
-        return procesaro;
+        return procesador;
     }
     public void setProcesaro(String procesaro) {
-        this.procesaro = procesaro;
+        this.procesador = procesaro;
     }
 
     @Override
     public String toString() {
         return "ComputadorPortatil{" +
                 "sistemaOperativo='" + sistemaOperativo + '\'' +
-                ", procesaro='" + procesaro + '\'' +
+                ", procesaro='" + procesador + '\'' +
                 ", serial='" + serial + '\'' +
                 ", marca='" + marca + '\'' +
                 ", tamanio='" + tamanio + '\'' +

@@ -1,6 +1,6 @@
 package model;
 
-public class Equipo {
+public abstract class Equipo {
 
     //serial, marca, tamaño, precio
     protected String serial;
