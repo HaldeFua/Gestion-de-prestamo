@@ -11,10 +11,6 @@ public abstract class ControladorMain {
         int bandera = 0;
         ControladorEstudiantesIngenieria controladorEstudiantesIngenieria = new ControladorEstudiantesIngenieria();
         ControladorEstudiantesDisenio controladorEstudiantesDisenio = new ControladorEstudiantesDisenio();
-        String tipoEstudiante = "Seleccionar una opción:\n"
-                + "1 Estudiante Ingeniería\n" +
-                "2 Estudiante Diseño\n" +
-                "3 Salir";
 
         do {
             bandera = val.capturarInt(Vista.inicio());
@@ -22,11 +18,12 @@ public abstract class ControladorMain {
             if (bandera == 1) {
                 int controlador = 0;
                 do {
-                    controlador = val.capturarInt(tipoEstudiante);
+                    controlador = val.capturarInt(Vista.tipoEstudiante());
 
                     switch (controlador){
                         case 1 -> controladorEstudiantesIngenieria.registrar();
                         case 2 -> controladorEstudiantesDisenio.registrar();
+                        case 3 -> controlador = 3;
                         default -> System.out.println("Opción no válida, intente de nuevo.");                    }
                 } while (controlador != 3);
 

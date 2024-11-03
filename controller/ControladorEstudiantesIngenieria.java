@@ -44,7 +44,7 @@ public class ControladorEstudiantesIngenieria implements Controlador{
 
     public EstudianteIngenieria buscar(String cedula) {
 
-        LinkedList<EstudianteIngenieria> estudiantesIngieria = persistencia.importartxtEstudianteIngenieria("estudiantes_ingieria");
+        LinkedList<EstudianteIngenieria> estudiantesIngieria = persistencia.importartxtEstudianteIngenieria("estudiantes_ingenieria");
 
             for (EstudianteIngenieria est: estudiantesIngieria){
                 if(est.getCedula().equals(cedula)){

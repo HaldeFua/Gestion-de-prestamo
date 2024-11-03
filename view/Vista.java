@@ -15,6 +15,13 @@ public abstract class Vista {
                 "3 Salir";
     }
 
+    public static String tipoEstudiante(){
+        return "Seleccionar una opción:\n" +
+                "1 Estudiante Ingeniería\n" +
+                "2 Estudiante Diseño\n" +
+                "3 Volver";
+    }
+
 
     public static void menuIngenieria() {
         while (true) {

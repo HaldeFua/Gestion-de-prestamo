@@ -13,7 +13,7 @@ public class ControladorPersistencia {
     public LinkedList<EstudianteIngenieria> importartxtEstudianteIngenieria(String nombreArchivo) {
 
         LinkedList<EstudianteIngenieria> listaEstudiantes = new LinkedList<>();
-        String rutaArchivo = nombreArchivo + ".txt";
+        String rutaArchivo = "persistencia/" + nombreArchivo + ".txt";
 
         try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
             String line;
@@ -52,7 +52,7 @@ public class ControladorPersistencia {
     public LinkedList<EstudianteDiseno> importartxtEstudianteDisenio(String nombreArchivo) {
 
         LinkedList<EstudianteDiseno> listaEstudiantes = new LinkedList<>();
-        String rutaArchivo = nombreArchivo + ".txt";
+        String rutaArchivo = "persistencia/" + nombreArchivo + ".txt";
 
         try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
             String line;
@@ -89,7 +89,7 @@ public class ControladorPersistencia {
     }
 
     public void exportartxtEstudianteIngenieria(EstudianteIngenieria estudiante){
-        String fileName = "estudiantes_ingenieria.txt";
+        String fileName = "persistencia/estudiantes_ingenieria.txt";
 
         // Creación y escritura en el archivo
         try (FileWriter writer = new FileWriter(fileName, true)) {
@@ -109,7 +109,7 @@ public class ControladorPersistencia {
     }
 
     public void exportartxtEstudianteDisenio(EstudianteDiseno estudiante){
-        String fileName = "estudiantes_disenio.txt";
+        String fileName = "persistencia/estudiantes_disenio.txt";
 
         // Creación y escritura en el archivo
         try (FileWriter writer = new FileWriter(fileName, true)) {
