@@ -30,27 +30,28 @@ public abstract class ControladorMain {
 
             //inisiar sesiom
             } else if (bandera == 2) {
-
                 controlador = val.capturarInt(Vista.tipoEstudiante());
-                String cedula = val.capturarString("Ingrese cédula: ");
-
-                switch (controlador){
-                    case 1 -> {
-                        if (controladorEstudiantesIngenieria.existeEstudiante((cedula))){
-                        Vista.menuIngenieria(controladorEstudiantesIngenieria.buscar(cedula));
-                        }else{
-                            System.out.println("Estudiante no existe");
+                do{
+                    String cedula = val.capturarString("Ingrese cédula: ");
+                    switch (controlador){
+                        case 1 -> {
+                            if (controladorEstudiantesIngenieria.existeEstudiante((cedula))){
+                            Vista.menuIngenieria(controladorEstudiantesIngenieria.buscar(cedula));
+                            }else{
+                                System.out.println("Estudiante no existe");
+                            }
                         }
-                    }
-                    case 2 -> {
-                        if (controladorEstudiantesDisenio.existeEstudiante((cedula))){
-                            Vista.menuDiseno(controladorEstudiantesDisenio.buscar(cedula));
-                        }else{
-                            System.out.println("Estudiante no existe");
+                        case 2 -> {
+                            if (controladorEstudiantesDisenio.existeEstudiante((cedula))){
+                                Vista.menuDiseno(controladorEstudiantesDisenio.buscar(cedula));
+                            }else{
+                                System.out.println("Estudiante no existe");
+                            }
                         }
+                        case 3 -> controlador = 3;
+                        default -> System.out.println("Opción no válida, intente de nuevo.");
                     }
-                }
-
+                }while(controlador != 3);
             }
         } while (bandera != 3);
     }

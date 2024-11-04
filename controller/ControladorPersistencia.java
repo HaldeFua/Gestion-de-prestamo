@@ -38,8 +38,6 @@ public class ControladorPersistencia {
                 }
             }
 
-            System.out.println("¡Archivo de estudiantes importado exitosamente!");
-
         } catch (IOException e) {
             System.out.println("No hay estudiantes, registrarse para continuar");
         } catch (NumberFormatException e) {
@@ -76,8 +74,6 @@ public class ControladorPersistencia {
                     System.out.println("Formato de línea incorrecto: " + line);
                 }
             }
-
-            System.out.println("¡Archivo de estudiantes importado exitosamente!");
 
         } catch (IOException e) {
             System.out.println("No hay estudiantes, registrarse para continuar");
