@@ -29,6 +29,11 @@ public class ControladorEstudiantesDisenio implements ControladorEstudiante{
         persistencia.exportartxtEstudianteDisenio(estudiante);
     }
 
+    @Override
+    public boolean existeEstudiante(String cedula){
+        return buscar(cedula) != null;
+    }
+
     public EstudianteDiseno buscar(String cedula) {
 
         LinkedList<EstudianteDiseno> estudiantes = persistencia.importartxtEstudianteDisenio("estudiantes_disenio");
@@ -40,11 +45,6 @@ public class ControladorEstudiantesDisenio implements ControladorEstudiante{
         }
 
         return null;
-    }
-
-    @Override
-    public boolean existeEstudiante(String cedula){
-        return buscar(cedula) != null;
     }
 
 }

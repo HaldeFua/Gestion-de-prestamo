@@ -2,11 +2,19 @@ package view;
 
 public abstract class Vista {
 
+    public static String principal(){
+        return "BIENVENIDO, SELECCIONE UNA OPCIÓN:" +
+                "\n1. Estudiante de ingeniería" +
+                "\n2. Estudiante de diseño" +
+                "\n3. Imprimir inventario total" +
+                "\n4. Salir del programa";
+    }
+
     public static String inicio(){
         return "Seleccionar una opción:\n"
                 +"1 Registrarse\n" +
                 "2 Iniciar sesión\n" +
-                "3 Salir";
+                "3 Volver";
     }
 
     public static String tipoEstudiante(){
