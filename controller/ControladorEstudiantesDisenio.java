@@ -2,7 +2,7 @@ package controller;
 import model.EstudianteDiseno;
 import java.util.LinkedList;
 
-public class ControladorEstudiantesDisenio implements Controlador{
+public class ControladorEstudiantesDisenio implements ControladorEstudiante{
 
     ControladorPersistencia persistencia = new ControladorPersistencia();
     Validaciones val = new Validaciones();
@@ -26,21 +26,6 @@ public class ControladorEstudiantesDisenio implements Controlador{
 
         EstudianteDiseno estudiante = new EstudianteDiseno(cedula,nombre,apellido,telefono,serial,modalidadEstudio,cantidadAsignaturas);
         persistencia.exportartxtEstudianteDisenio(estudiante);
-    }
-
-    @Override
-    public void modificar() {
-
-    }
-
-    @Override
-    public void eliminar() {
-
-    }
-
-    @Override
-    public void buscar() {
-
     }
 
     public EstudianteDiseno buscar(String cedula) {

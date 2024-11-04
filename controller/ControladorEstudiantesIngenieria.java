@@ -3,7 +3,7 @@ import model.EstudianteIngenieria;
 
 import java.util.LinkedList;
 
-public class ControladorEstudiantesIngenieria implements Controlador{
+public class ControladorEstudiantesIngenieria implements ControladorEstudiante{
 
     ControladorPersistencia persistencia = new ControladorPersistencia();
     Validaciones val = new Validaciones();
@@ -27,20 +27,6 @@ public class ControladorEstudiantesIngenieria implements Controlador{
         return buscar(cedula) != null;
     }
 
-    @Override
-    public void modificar() {
-
-    }
-
-    @Override
-    public void eliminar() {
-
-    }
-
-    @Override
-    public void buscar() {
-
-    }
 
     public EstudianteIngenieria buscar(String cedula) {
 
