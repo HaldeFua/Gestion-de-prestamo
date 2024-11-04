@@ -8,6 +8,7 @@ public class ControladorEstudiantesIngenieria implements ControladorEstudiante{
     ControladorPersistencia persistencia = new ControladorPersistencia();
     Validaciones val = new Validaciones();
 
+    @Override
     public void registrar() {
 
         String cedula = val.capturarString("Registrar una cedula:");

@@ -7,6 +7,7 @@ public class ControladorEstudiantesDisenio implements ControladorEstudiante{
     ControladorPersistencia persistencia = new ControladorPersistencia();
     Validaciones val = new Validaciones();
 
+    @Override
     public void registrar() {
         String cedula;
         String nombre;
