@@ -1,8 +1,5 @@
 package controller;
-
 import model.EstudianteDiseno;
-import model.EstudianteIngenieria;
-
 import java.util.LinkedList;
 
 public class ControladorEstudiantesDisenio implements Controlador{
@@ -63,4 +60,15 @@ public class ControladorEstudiantesDisenio implements Controlador{
     public boolean existeEstudiante(String cedula){
         return buscar(cedula) != null;
     }
+
+    public EstudianteDiseno iniciarSesion(String cedula){
+        if (existeEstudiante(cedula)) {
+            EstudianteDiseno usuario = buscar(cedula);
+            return usuario;
+        } else {
+            System.out.println("Error: No se pudo iniciar sesión.");
+            return null;
+        }
+    }
+
 }

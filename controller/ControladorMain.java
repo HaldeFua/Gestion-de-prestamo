@@ -14,9 +14,10 @@ public abstract class ControladorMain {
 
         do {
             bandera = val.capturarInt(Vista.inicio());
+            int controlador = 0;
 
+            //Registrarse
             if (bandera == 1) {
-                int controlador = 0;
                 do {
                     controlador = val.capturarInt(Vista.tipoEstudiante());
 
@@ -27,14 +28,29 @@ public abstract class ControladorMain {
                         default -> System.out.println("Opción no válida, intente de nuevo.");                    }
                 } while (controlador != 3);
 
+            //inisiar sesiom
             } else if (bandera == 2) {
+
+                controlador = val.capturarInt(Vista.tipoEstudiante());
                 String cedula = val.capturarString("Ingrese cédula: ");
-                if (controladorEstudiantesIngenieria.existeEstudiante(cedula)) {
-                    EstudianteIngenieria usuario = controladorEstudiantesIngenieria.buscar(cedula);
-                    Vista.menuIngenieria(usuario);
-                } else {
-                    System.out.println("Error: No se pudo iniciar sesión.");
+
+                switch (controlador){
+                    case 1 -> {
+                        if (controladorEstudiantesIngenieria.existeEstudiante((cedula))){
+                        Vista.menuIngenieria(controladorEstudiantesIngenieria.buscar(cedula));
+                        }else{
+                            System.out.println("Estudiante no existe");
+                        }
+                    }
+                    case 2 -> {
+                        if (controladorEstudiantesDisenio.existeEstudiante((cedula))){
+                            Vista.menuDiseno(controladorEstudiantesDisenio.buscar(cedula));
+                        }else{
+                            System.out.println("Estudiante no existe");
+                        }
+                    }
                 }
+
             }
         } while (bandera != 3);
     }

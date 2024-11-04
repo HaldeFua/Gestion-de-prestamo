@@ -1,4 +1,5 @@
 package view;
+import model.EstudianteDiseno;
 import model.EstudianteIngenieria;
 
 import java.util.Scanner;
@@ -22,30 +23,6 @@ public abstract class Vista {
                 "3 Volver";
     }
 
-
-    public static void menuIngenieria() {
-        while (true) {
-            System.out.println("\n---- MENÚ PRINCIPAL ----");
-            System.out.println("1. Estudiantes de Ingeniería");
-            System.out.println("2. Estudiantes de Diseño");
-            System.out.println("3. Salir");
-            System.out.print("Seleccione una opción: ");
-
-            String opcion = sc.nextLine();
-
-            switch (opcion) {
-                /*case "1" -> menuIngenieria();*/
-                case "2" -> menuDiseno();
-                case "3" -> {
-                    System.out.println("Saliendo del sistema...");
-                    sc.close();
-                    return;
-                }
-                default -> System.out.println("Opción no válida, intente de nuevo.");
-            }
-        }
-    }
-
     public static void menuIngenieria(EstudianteIngenieria usuario) {
         while (true) {
 
@@ -54,7 +31,7 @@ public abstract class Vista {
             System.out.println("2. Modificar préstamo de equipo (por serial o cédula)");
             System.out.println("3. Devolución de equipo (por serial o cédula)");
             System.out.println("4. Buscar equipo (por serial o cédula)");
-            System.out.println("5. Volver al menú principal");
+            System.out.println("5. Cerrrar sesión");
             System.out.print("Seleccione una opción: ");
 
             String opcion = sc.nextLine();
@@ -73,9 +50,9 @@ public abstract class Vista {
     }
 
     // Submenú Diseño
-    public static void menuDiseno() {
+    public static void menuDiseno(EstudianteDiseno usuario) {
         while (true) {
-            System.out.println("\n---- ESTUDIANTES DE DISEÑO ----");
+            System.out.println("\n---- ESTUDIANTES DE DISEÑO " + usuario.getNombre() + " ----");
             System.out.println("1. Registrar préstamo de equipo");
             System.out.println("2. Modificar préstamo de equipo (por serial o cédula)");
             System.out.println("3. Devolución de equipo (por serial o cédula)");
@@ -86,7 +63,7 @@ public abstract class Vista {
 
             String opcion = sc.nextLine();
 
-            switch (opcion) {
+            /*switch (opcion) {
                 case "1" -> System.out.println("registrarPrestamoDiseno()");
                 case "2" -> System.out.println("modificarPrestamoDiseno()");
                 case "3" -> System.out.println("devolverEquipoDiseno()");
@@ -95,7 +72,7 @@ public abstract class Vista {
                     return;
                 }
                 default -> System.out.println("Opción no válida, intente de nuevo.");
-            }
+            }*/
         }
     }
 
