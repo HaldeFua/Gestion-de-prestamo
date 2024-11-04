@@ -61,14 +61,4 @@ public class ControladorEstudiantesDisenio implements Controlador{
         return buscar(cedula) != null;
     }
 
-    public EstudianteDiseno iniciarSesion(String cedula){
-        if (existeEstudiante(cedula)) {
-            EstudianteDiseno usuario = buscar(cedula);
-            return usuario;
-        } else {
-            System.out.println("Error: No se pudo iniciar sesión.");
-            return null;
-        }
-    }
-
 }
