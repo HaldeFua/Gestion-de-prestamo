@@ -1,4 +1,5 @@
 package controller;
+import model.DetallePrestamoIng;
 import model.EstudianteDiseno;
 import model.EstudianteIngenieria;
 import view.Vista;
@@ -8,6 +9,7 @@ public abstract class ControladorMain {
     static Validaciones val = new Validaciones();
     static ControladorEstudiantesIngenieria controladorEstudiantesIngenieria = new ControladorEstudiantesIngenieria();
     static ControladorEstudiantesDisenio controladorEstudiantesDisenio = new ControladorEstudiantesDisenio();
+    static ControladorComputador controladorComputador = new ControladorComputador();
     static int controlador = 0;
 
     public static void run(){
@@ -34,8 +36,8 @@ public abstract class ControladorMain {
                         case 3 -> run();
                         default -> System.out.println("Opción no válida, intente de nuevo.");}
                 }
-                //PENDIENTE
-                case 3 -> System.out.println("Imprimir inventario total");
+                //PENDIENTE diseño
+                case 3 -> controladorComputador.mostrar(controladorComputador.traerLista());
                 case 4 -> estaCorreindo = false;
                 default -> System.out.println("Seleccione una opción valida");
             }
@@ -78,7 +80,11 @@ public abstract class ControladorMain {
         controlador = val.capturarInt(Vista.menuIngenieria(usuario.getNombre()));
 
         switch (controlador) {
-            case 1 -> System.out.println("registrarPrestamoIngenieria()");
+            case 1 -> {
+                ControladorPrestamoIng detallePrestamoIng = new ControladorPrestamoIng();
+                detallePrestamoIng.registrarPrestamo(usuario);
+                System.out.println(detallePrestamoIng);
+            }
             case 2 -> System.out.println("modificarPrestamoIngenieria()");
             case 3 -> System.out.println("devolverEquipoIngenieria()");
             case 4 -> System.out.println("buscarEquipoIngenieria()");

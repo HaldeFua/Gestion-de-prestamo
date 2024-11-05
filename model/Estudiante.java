@@ -5,6 +5,7 @@ public abstract class Estudiante {
     protected String apellido;
     protected String telefono;
     protected int serial;
+    protected boolean prestamo;
 
     // Constructor
     public Estudiante(String cedula, String nombre, String apellido, String telefono, int serial) {

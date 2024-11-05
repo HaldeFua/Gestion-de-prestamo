@@ -1,0 +1,10 @@
+S12345,HP,15.6,800,Windows 10,Intel i5
+S12346,Dell,14,750,Ubuntu,Intel i7
+S12347,Lenovo,13.3,700,Windows 11,AMD Ryzen 5
+S12348,Apple,16,1500,macOS,Apple M1
+S12349,Acer,15.6,650,Windows 10,Intel i3
+S12350,Asus,14,720,Windows 11,AMD Ryzen 7
+S12351,MSI,17.3,900,Windows 10,Intel i9
+S12352,Samsung,13.3,850,Chrome OS,Intel Celeron
+S12353,Toshiba,15.6,630,Windows 10,Intel Pentium
+S12354,Huawei,14,780,Windows 11,Intel i5

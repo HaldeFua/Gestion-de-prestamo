@@ -1,6 +1,7 @@
 package controller;
 import model.EstudianteIngenieria;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class ControladorEstudiantesIngenieria implements ControladorEstudiante{
@@ -40,6 +41,22 @@ public class ControladorEstudiantesIngenieria implements ControladorEstudiante{
             }
 
         return null;
+    }
+
+    public void remover(EstudianteIngenieria estudiante){
+
+        LinkedList<EstudianteIngenieria> estudiantes = persistencia.importartxtEstudianteIngenieria("estudiantes_ingenieria");
+
+        Iterator<EstudianteIngenieria> iterator = estudiantes.iterator();
+        while (iterator.hasNext()) {
+            EstudianteIngenieria unEstudiante = iterator.next();
+            if (unEstudiante.equals(estudiante)) {
+                iterator.remove();
+            }
+        }
+
+        persistencia.exportartxtEstudianteIngenieria(estudiantes);
+
     }
 
 }
